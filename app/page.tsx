@@ -7,6 +7,17 @@ import Link from "next/link"
 import { ThemeToggle } from "@/components/ui/theme-toggle"
 
 export default function Home() {
+  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    const targetId = href.replace('#', '');
+    const elem = document.getElementById(targetId);
+    elem?.scrollIntoView({
+      behavior: 'smooth'
+    });
+    // Update URL without a page refresh
+    window.history.pushState({}, '', href);
+  };
+
   return (
     <div className="flex flex-col min-h-screen">
       <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -16,10 +27,34 @@ export default function Home() {
               <span className="hidden font-bold sm:inline-block">Mohan Ram</span>
             </Link>
             <nav className="flex items-center space-x-6 text-sm font-medium">
-              <Link className="transition-colors hover:text-foreground/80 text-foreground/60" href="#about">About</Link>
-              <Link className="transition-colors hover:text-foreground/80 text-foreground/60" href="#experience">Experience</Link>
-              <Link className="transition-colors hover:text-foreground/80 text-foreground/60" href="#projects">Projects</Link>
-              <Link className="transition-colors hover:text-foreground/80 text-foreground/60" href="#contact">Contact</Link>
+              <Link 
+                className="transition-colors hover:text-foreground/80 text-foreground/60" 
+                href="#about"
+                onClick={(e) => handleScroll(e, '#about')}
+              >
+                About
+              </Link>
+              <Link 
+                className="transition-colors hover:text-foreground/80 text-foreground/60" 
+                href="#experience"
+                onClick={(e) => handleScroll(e, '#experience')}
+              >
+                Experience
+              </Link>
+              <Link 
+                className="transition-colors hover:text-foreground/80 text-foreground/60" 
+                href="#projects"
+                onClick={(e) => handleScroll(e, '#projects')}
+              >
+                Projects
+              </Link>
+              <Link 
+                className="transition-colors hover:text-foreground/80 text-foreground/60" 
+                href="#contact"
+                onClick={(e) => handleScroll(e, '#contact')}
+              >
+                Contact
+              </Link>
             </nav>
           </div>
           <div className="flex flex-1 items-center justify-end">
@@ -42,7 +77,12 @@ export default function Home() {
               </div>
               <div className="space-x-4">
                 <Button asChild>
-                  <Link href="#contact">Contact Me</Link>
+                  <Link 
+                    href="#contact" 
+                    onClick={(e) => handleScroll(e, '#contact')}
+                  >
+                    Contact Me
+                  </Link>
                 </Button>
                 <Button variant="outline" asChild>
                   <Link href="/MohanRam_resume_Sep2024.pdf">Download Resume</Link>
