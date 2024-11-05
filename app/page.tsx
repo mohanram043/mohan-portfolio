@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Github, Linkedin, Mail, Twitter } from "lucide-react"
+import { Github, Linkedin, Mail, X } from "lucide-react"
 import Link from "next/link"
 
 export default function Home() {
@@ -141,8 +141,8 @@ export default function Home() {
                   </Link>
                 </Button>
                 <Button variant="outline" size="icon" asChild>
-                  <Link href="https://twitter.com/mohanram" aria-label="Twitter">
-                    <Twitter className="h-4 w-4" />
+                  <Link href="https://twitter.com/i_mohanram" aria-label="X (formerly Twitter)">
+                    <X className="h-4 w-4" />
                   </Link>
                 </Button>
                 <Button variant="outline" size="icon" asChild>
