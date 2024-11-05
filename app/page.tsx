@@ -127,7 +127,7 @@ export default function Home() {
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-8">Get in Touch</h2>
             <div className="flex flex-col items-center space-y-4 text-center">
               <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400">
-                I'm always open to new opportunities and collaborations. Feel free to reach out!
+                I am always open to new opportunities and collaborations. Feel free to reach out!
               </p>
               <div className="flex space-x-4">
                 <Button variant="outline" size="icon" asChild>
