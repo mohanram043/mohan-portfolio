@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Github, Linkedin, Mail, X } from "lucide-react"
 import Link from "next/link"
+import { ThemeToggle } from "@/components/ui/theme-toggle"
 
 export default function Home() {
   return (
@@ -20,6 +21,9 @@ export default function Home() {
               <Link className="transition-colors hover:text-foreground/80 text-foreground/60" href="#projects">Projects</Link>
               <Link className="transition-colors hover:text-foreground/80 text-foreground/60" href="#contact">Contact</Link>
             </nav>
+          </div>
+          <div className="flex flex-1 items-center justify-end">
+            <ThemeToggle />
           </div>
         </div>
       </header>
